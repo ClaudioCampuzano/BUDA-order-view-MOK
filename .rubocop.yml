@@ -1,1 +1,17 @@
 require: rubocop-rails
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Description: Avoid methods longer than 15 lines of code.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
+  Enabled: true
+  CountComments: true
+  Max: 15
+  Exclude:
+    - "spec/**/*"
+Naming/AccessorMethodName:
+  Description: Check the naming of accessor methods for get_/set_.
+  Enabled: false
+Style/Documentation:
+  Description: Document classes and non-namespace modules.
+  Enabled: false
