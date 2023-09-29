@@ -1,0 +1,15 @@
+es:
+  COP: Peso Colombiano
+  CLP: Peso Chileno
+  PEN: Sol Peruano
+  BTC: Bitcoin
+  USDC: USDC
+  title: Transacciones de mayor valor en buda.com
+  market: Mercado
+  timestamp: Fecha y hora
+  amount: Monto
+  price: Precio
+  value: Valor
+  type: Tipo
+  buy: Venta
+  sell: Compra

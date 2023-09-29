@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head lang="<%= I18n.locale %>">
+      <meta charset="UTF-8">
+      <title><%= t('title') %></title>
+      <%= javascript_include_tag 'handleButton' %>
+   </head>
+   <body>
+      <h1><%= t('title') %></h1>
+      <% @higher_value_trades.each do |base_currency, trades| %>
+      <h2 class="button">
+         <button class="toggle-table" data-target="<%= base_currency %>">
+         <%= t(base_currency) %>
+         </button>
+      </h2>
+      <table class="hidden-table" id="<%= base_currency %>">
+         <thead>
+            <tr>
+               <th><%= t('timestamp') %></th>
+               <th><%= t('market') %></th>
+               <th><%= t('type') %></th>
+               <th><%= t('amount') %></th>
+               <th><%= t('price') %></th>
+            </tr>
+         </thead>
+         <tbody>
+            <% trades.each do |trade| %>
+            <tr>
+               <td><%= Time.at(trade[:timestamp].to_i/1000).strftime("%d/%m/%Y %H:%M:%S") %></td>
+               <td><%= trade[:market_id] %></td>
+               <td><%= t(trade[:type]) %></td>
+               <td><%= humanized_money_with_symbol Money.from_amount(trade[:amount].to_f, trade[:market_id].split('-').first) %></td>
+               <td><%= humanized_money_with_symbol Money.from_amount(trade[:price].to_f, base_currency) %></td>
+            </tr>
+            <% end %>
+         </tbody>
+      </table>
+      <% end %>
+   </body>
+</html>
