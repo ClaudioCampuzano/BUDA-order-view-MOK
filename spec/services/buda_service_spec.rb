@@ -5,7 +5,7 @@ require 'rails_helper'
 describe BudaService do
   subject(:buda_service) { described_class }
   let(:market_a) { 'BTC-CLP' }
-  let(:market_b) { 'ETH-CLP' }
+  let(:market_b) { 'ETH-PEN' }
   let(:higher_value_market_a) do
     ['1695935855001', '0.4', '100.0',
      'buy', 3]
@@ -23,24 +23,25 @@ describe BudaService do
     end
     let(:response) do
       { 'CLP' => [
-        { market_id: market_a,
-          timestamp: higher_value_market_a[0],
-          amount: higher_value_market_a[1],
-          price: higher_value_market_a[2],
-          type: higher_value_market_a[3],
-          id: higher_value_market_a[4] },
-        {
+          { market_id: market_a,
+            timestamp: higher_value_market_a[0],
+            amount: higher_value_market_a[1],
+            price: higher_value_market_a[2],
+            type: higher_value_market_a[3],
+            id: higher_value_market_a[4] }
+        ],
+        'PEN' =>
+        [{
           market_id: market_b,
           timestamp: higher_value_market_b[0],
           amount: higher_value_market_b[1],
           price: higher_value_market_b[2],
           type: higher_value_market_b[3],
           id: higher_value_market_b[4]
-        }
-      ] }
+        }] }
     end
 
-    it 'return wawa' do
+    it 'return correct values' do
       expect(buda_service.higher_value_trades).to eq response
     end
   end
