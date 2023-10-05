@@ -27,8 +27,12 @@ Para utilizar la aplicación basta con ingresar a http://localhost:3000 a travez
 
 Utilizando la herramienta **Lighthouse** se obtienen los siguientes resultados:
 
+<img width="498" alt="Captura de pantalla 2023-09-29 a la(s) 11 41 32" src="https://github.com/ClaudioCampuzano/buda-order-view/assets/20999953/1d1a9eda-fa08-48fb-83db-611d74a7cdd1">
+
 ## Captura
 
-<img width="498" alt="Captura de pantalla 2023-09-29 a la(s) 11 41 32" src="https://github.com/ClaudioCampuzano/buda-order-view/assets/20999953/1d1a9eda-fa08-48fb-83db-611d74a7cdd1">
+https://github.com/ClaudioCampuzano/buda-order-view/assets/20999953/cd8f2b08-f493-455e-84a5-c59cbae32d75
+
+
 
 
